@@ -1,0 +1,4 @@
+﻿  sumavg.cpp
+c:\users\feb-19\source\repos\doublelist1\doublelist1\sumavg.cpp(19): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  LINK : C:\Users\feb-19\source\repos\doublelist1\Debug\doublelist1.exe not found or not built by the last incremental link; performing full link
+LINK : fatal error LNK1104: cannot open file 'C:\Users\feb-19\source\repos\doublelist1\Debug\doublelist1.exe'
