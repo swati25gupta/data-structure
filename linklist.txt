@@ -1,0 +1,117 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+struct Node
+{
+	int num;
+	string name;
+	Node * head;
+	Node()
+	{
+		cout<<"Enter num and name=";
+		cin>>num>>name;
+		head=0;
+	}
+};
+Node * first;
+
+void addAtBeg()
+{
+	Node *New=new Node();
+	if(first==0)
+		first=New;
+	else
+	{
+		New->head=first;
+		first=New;
+	}
+}
+void addAtEnd()
+{
+	Node *New1=new Node();
+	if(first==0)
+		first=New1;
+	else
+	{
+		Node *temp=first;
+		while(temp->head)
+		{
+			temp=temp->head;
+		}
+		temp->head=New1;
+	}
+}
+void  addAtPos(int pos)
+{
+	Node *New2=new Node();
+	if(first==0)
+		first=New2;
+	else
+	{
+		int count=1;
+		Node * temp=first;
+		while(temp->head && count<pos)
+		{
+			temp=temp->head;
+			count++;
+		}
+		New2->head=temp->head;
+		temp->head=New2;
+	}
+}
+void deleteAtBeg()
+{
+	Node * r= first;
+	first=r->head;
+	delete r;
+}
+void deleteAtEnd()
+{
+	Node *d=0;
+	Node *j=0;
+	d=first;
+	while(d->head)
+	{
+		j=d;
+		d=d->head;
+	}
+	j->head=NULL;
+	delete d;
+}
+void deleteFromPos(int pos)
+{
+	
+}
+void disp()
+{
+	Node * temp=first;
+	while(temp)
+	{
+		cout<<"Num:"<<temp->num;
+		cout<<"\tName:"<<temp->name;
+		cout<<endl;
+		temp=temp->head;
+	}
+}
+void main()
+{
+	addAtBeg();
+	addAtBeg();
+	addAtEnd();
+	addAtEnd();
+	int pos;
+	disp();
+	cout<<"Enter the position=";
+	cin>>pos;
+	addAtPos(pos);
+	disp();
+	cout<<endl<<"deleteAtBeg";
+	deleteAtBeg();
+	disp();
+	cout<<endl<<"deleteAtEnd";
+	deleteAtEnd();
+	disp();
+	//addAtBeg();
+	//addAtBeg();
+}
